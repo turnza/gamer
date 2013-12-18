@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <h4><b>Match:</b>
+  <%= @result1.match1.name %>
+</p>
+
+<p>
+  <b>Team score:</b>
+  <%= @result1.team_score %>
+</p>
+
+<p>
+  <b>Competitor score:</b>
+  <%= @result1.competitor_score %>
+</p></h4>
+
+  <h2> Please leave a comment:</h2>
+     <%= form_for([@result1, Post.new]) do |f| %>
+       <%= f.text_area :content, :rows => 3 %>
+       <div class="actions">
+        <%= f.submit "Post A Comment "%>
+   </div>
+<% end %>
+
+<% if @result1.posts.empty? %>
+   <h3>you are the first to comment</h3>
+<% else %>
+<h2>what others felt</h2>
+<% @result1.posts.reverse.each do |post| %>
+   <p><%= post.content %>
+Posted <%= time_ago_in_words(post.created_at) %> ago by 
+       <%= post.member.name %></p>
+ <% end %>
+<%end%>
+
+<%= link_to 'Edit', edit_result1_path(@result1) %> |
+<%= link_to 'Back', result1s_path %>
+

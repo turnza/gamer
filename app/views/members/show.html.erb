@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @member.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @member.address %>
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@member.latitude}%2C#{@member.longitude}" %>
+
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @member.email %>
+</p>
+
+<p>
+  <b>Gamertag:</b>
+  <%= @member.gamertag %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= @member.team.name %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

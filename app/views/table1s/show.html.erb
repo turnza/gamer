@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Team:</b>
+  <%= @table1.team.name %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%= @table1.points %>
+</p>
+
+
+<%= link_to 'Edit', edit_table1_path(@table1) %> |
+<%= link_to 'Back', table1s_path %>

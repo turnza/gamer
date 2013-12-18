@@ -1,0 +1,17 @@
+<%= form_for(@cartt) do |f| %>
+  <% if @cartt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cartt.errors.count, "error") %> prohibited this cartt from being saved:</h2>
+
+      <ul>
+      <% @cartt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

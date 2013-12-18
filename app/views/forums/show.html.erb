@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<h4><p>
+  <b>Title:</b>
+  <%= @forum.Title %>
+</p>
+
+<p>
+  <b>Topic:</b>
+  <%= @forum.Content %>
+</p>
+
+<p>
+  <b>Member:</b>
+  <%= @forum.member.name %>
+</p></h4>
+
+
+  <h2> Please leave a comment:</h2>
+     <%= form_for([@forum, Post1.new]) do |f| %>
+       <%= f.text_area :content, :rows => 3 %>
+       <div class="actions">
+        <%= f.submit "Post A Comment "%>
+   </div>
+<% end %>
+
+<% if @forum.post1s.empty? %>
+   <h3>you are the first to comment</h3>
+<% else %>
+<h2>what others felt</h2>
+<% @forum.post1s.reverse.each do |post1| %>
+   <p><%= post1.content %>
+Posted <%= time_ago_in_words(post1.created_at) %> ago by 
+       <%= post1.member.name %></p>
+ <% end %>
+<%end%>
+
+
+
+
+<%= link_to 'Edit', edit_forum_path(@forum) %> |
+<%= link_to 'Back', forums_path %>

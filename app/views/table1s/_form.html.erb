@@ -1,0 +1,25 @@
+<%= form_for(@table1) do |f| %>
+  <% if @table1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@table1.errors.count, "error") %> prohibited this table1 from being saved:</h2>
+
+      <ul>
+      <% @table1.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.collection_select :team_id , Team.all, :id, :name  %>
+  </div>
+  <div class="field">
+    <%= f.label :points %><br />
+    <%= f.select :points,["0", "1", "2", "3","4", "5","6", "7","8", "9" ] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

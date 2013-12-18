@@ -1,0 +1,17 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h1>Your Pragmatic Catalog</h1>
+<% @shops.each do |shop| %>
+   <div class="entry">
+   <%= image_tag(stop.picture, :size => "100x100") %>
+       <h3><%= shop.product %></h3>
+      <%= sanitize(stop.quantity) %>
+     <div class="price_line">
+     <span class="price"><%= number_to_currency(shop.price) %></span>
+     <%= button_to 'Add to Cart', line_items_path(shop_id: shop) %>
+	 <td><%= link_to 'Destroy', stop, confirm: 'Are you sure?', method: :delete %></td>
+      </div>
+  </div>
+<% end %>
+<%= link_to 'New Product', new_stop_path %>

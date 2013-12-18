@@ -1,0 +1,25 @@
+<%= image_tag("admin.png",:alt => "im sad", :size=> "400x100")%>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin1s.each do |admin1| %>
+  <tr>
+    <td><%= admin1.name %></td>
+    <td><%= admin1.email %></td>
+    <td><%= link_to 'Show', admin1 %></td>
+    <td><%= link_to 'Edit', edit_admin1_path(admin1) %></td>
+    <td><%= link_to 'Destroy', admin1, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Admin1', new_admin1_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  time: MyString
+  team_id: 1
+  member_id: 1
+  competitor_id: 1
+  competitor_id: 1
+  game: MyString
+
+two:
+  name: MyString
+  time: MyString
+  team_id: 1
+  member_id: 1
+  competitor_id: 1
+  competitor_id: 1
+  game: MyString

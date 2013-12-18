@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Member:</b>
+  <%= @order1.member_id %>
+</p>
+
+<p>
+  <b>Paymethod:</b>
+  <%= @order1.paymethod %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @order1.total %>
+</p>
+
+<p>
+	<p><b>Items on the order</b></p>
+	<% @order1.lineitem2s.each do |item| %>
+		 <%= item.store.product %> @	
+		<%= number_to_euro(item.store.price) %><br />		
+	<% end %>
+</p>
+
+<%= link_to 'Edit', edit_order1_path(@order1) %> |
+<%= link_to 'Back', order1s_path %>

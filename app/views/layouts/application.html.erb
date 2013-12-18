@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gamesapp</title>
+  <%= stylesheet_link_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css",  "application", :media => "all" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="banner">
+<font size="3" color="green">aaron turner</font>
+	<%= image_tag("logo.gif", :size => "400x70") %>
+	<%= @page_title || "" %>
+</div>
+<% if flash %>
+    <% flash.each do |key, value| %>   
+       <div class="flash <%= key %>">
+		<%= value %>
+	</div>
+    <% end %>
+ <% end %>
+ 
+
+<div id="nav">
+
+	<ul>
+	<% if !signed_in? %>
+		<li><%= link_to "Sign In", signin_path %></li>
+		<li><%= link_to "Register", new_member_path%></li>
+	<% else %>
+		<li>Signed in as <%= @current_member.name %></li>
+		<li><%= link_to "Sign Out", signout_path %></li>
+
+	<%end %>
+		
+		<li><%= link_to "Teams", teams_path%></li>
+		<li><%= link_to "Members", members_path%></li>
+		<li><%=link_to "Competitors", competitors_path %></li>
+		<li><%= link_to "Create Match", new_match1_path %></li>
+		<li><%= link_to "View Match", match1s_path %></li>
+		<li><%= link_to "Results", result1s_path %></li>
+		<li><%= link_to "Table", table1s_path%></li>
+		<li><%= link_to "Store", stores_path%></li>
+		<li><%= link_to "Forums", forums_path%></li>
+		<li><%= link_to "Admin", admin1s_path%></li>
+		<li><%= link_to "About", about_path%></li>
+		
+		
+		
+	</ul>
+	<div id="columns">
+    <div id="side">
+    <div id="cart">
+	<% if @cart %>
+<%= render @cart %>
+<% end %>
+</div>
+	<div id="footer">
+        
+</div>
+   </div>
+  </div>
+ </div>
+</head>
+
+<%= yield %>
+
+
+</body>
+</html>
+

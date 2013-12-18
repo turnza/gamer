@@ -1,0 +1,25 @@
+<%= image_tag("tables.png",:alt => "im sad", :size=> "400x100")%>
+
+<table>
+  <tr>
+    <th>Team</th>
+    <th>Points</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @table1s.each do |table1| %>
+  <tr>
+    <td><%= table1.team.name %></td>
+    <td><h4><%= table1.points %></h4></td>
+    <td><%= link_to 'Show', table1 %></td>
+    <td><%= link_to 'Edit', edit_table1_path(table1) %></td>
+    <td><%= link_to 'Destroy', table1, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'ADD TEAM TO TABLE', new_table1_path %>

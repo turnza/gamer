@@ -1,0 +1,20 @@
+<%= image_tag("store.png",:alt => "im sad", :size=> "400x100")%>
+<% if notice %>
+
+<% end %>
+ <% if !@stores.nil? %>	
+  <% @stores.each do |store| %>
+   <div class="entry">
+    <h4><%= store.product %></h4>
+    <%= image_tag(store.picture, :size => "100x100") %>
+    <div class="price_line">
+     <span class="price"><%= number_to_currency(store.price) %></span>
+     <td><%= link_to 'Destroy', store, confirm: 'Are you sure?', method: :delete %></td>
+      <%= button_to 'Add to Cart', lineitem2s_path(store_id: store), remote: true %>
+     </div>
+  </div>
+<% end %>
+<%end%>
+
+
+<%= link_to 'New Product', new_store_path %>

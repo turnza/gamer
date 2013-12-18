@@ -1,0 +1,51 @@
+<%= form_for(@match1) do |f| %>
+  <% if @match1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@match1.errors.count, "error") %> prohibited this match1 from being saved:</h2>
+
+      <ul>
+      <% @match1.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.select :name,["matchT1", "matchT2","matchT3", "matchT4","matchT5", "matchT6","matchT7", "matchT8","matchT9", "matchT10"] %>
+ 
+  </div>
+  <div class="field">
+    <%= f.label :time%><br />
+    <%= f.text_field :time, id: :datepicker  %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %><br />
+    <%= f.collection_select :team_id , Team.all, :id, :name  %>
+ 
+  </div>
+  <div class="field">
+    <%= f.label :member_id %><br />
+    <%= f.collection_select :member_id , Member.all, :id, :gamertag  %>
+  
+  </div>
+  <div class="field">
+    <%= f.label :competitor_id %><br />
+    <%= f.collection_select :competitor_id , Competitor.all, :id, :team  %>
+  
+  </div>
+  <div class="field">
+    <%= f.label :competitor_id %><br />
+    <%= f.collection_select :competitor_id , Competitor.all, :id, :gamertag %>
+ 
+  </div>
+  <div class="field">
+    <%= f.label :game %><br />
+    <%= f.select :game,["Fifa14", "Black Ops 2","Call of Duty Ghost", "BattleField","Gran Turismo"] %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

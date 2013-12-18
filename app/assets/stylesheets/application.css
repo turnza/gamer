@@ -1,0 +1,189 @@
+body {background-image:url('gb.jpg') ;}
+body {font-family:Cursive;font-size:14px;font-style:normal;font-weight:bold;text-decoration:none;text-transform:none;color:#E6E6E6;}
+h4 { color: #00FF00; }
+
+
+#banner {
+  background-image:url('nav4.png') ;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "BatmanForeverAlternate", serif;
+  color: black;
+  text-align: center;
+
+  img {
+    float: left;
+  }
+}
+
+ #cart {
+      font-size: smaller;
+      color:     white;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
+//#START:side
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: yellow;
+
+/* START_HIGHLIGHT */
+    form, div {
+      display: inline;
+    }  
+ 
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color:     black;
+
+      table {
+        border-top:    1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
+
+/* END_HIGHLIGHT */
+    ul {
+      padding: 0;
+
+      li {
+        list-style: none;
+
+        a {
+          color: #bfb;
+          font-size: small;
+        }
+      }
+    }
+  }
+//#END:side
+} #end columns
+
+a:link { 
+	color:#00FF00 ;
+	font-weight: bold;
+	text-decoration: none;
+}
+	
+a:visited { 
+	color: #00FF00;
+	font-weight: bold;
+	text-decoration: none;	
+}
+	
+a:hover, a:active { 
+	color: #00FF00;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#footer a:link { 
+	color: #92E80B;
+	font-weight: bold;
+	text-decoration: none;
+}
+	
+#footer a:visited { 
+	color: #00FF00;
+	font-weight: bold;
+	text-decoration: none;	
+}
+	
+#footer a:hover, #footer a:active { 
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: underline;
+}
+#nav {
+  float: right;
+}
+
+#nav {
+  
+  padding: 0 10.7em;
+  white-space: nowrap;
+}
+
+#nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 1.2em 0;
+}
+
+#nav ul li a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+#nav ul li a:visited {
+  color: #99FF33;
+}
+
+#nav ul li a:hover {
+  text-decoration: underline;
+  }
+  
+  
+
+
+
+#nav a:link { 
+	background: url(btn-bg.gif) no-repeat;
+	color: #C7C6C6;
+	display: block;
+	font-size: 10px;
+	font-weight: bold;
+	height: 20px;
+	padding-top: 6px;
+	text-align: center;
+	text-decoration: none;
+	width: 71px;
+}
+
+.depot_form {
+   fieldset {
+    background: #efe;
+   legend {
+    color: #dfd;
+    background: #141;
+    font-family: sans-serif;
+	padding: 0.2em 1em;
+    }
+  }
+form {
+  label {
+   width: 5em;
+    float: left;
+    text-align: right;
+    padding-top: 0.2em;
+    margin-right: 0.1em;
+    display: block;
+  }
+   select, textarea, input {
+   margin-left: 0.5em;
+   }
+   .submit {
+    margin-left: 4em;
+   }
+     br {
+    display: none
+   }
+  }
+}

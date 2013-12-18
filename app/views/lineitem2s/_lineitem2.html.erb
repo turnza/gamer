@@ -1,0 +1,9 @@
+<% if lineitem2 == @current_item %>
+<tr id="current_item">
+ <% else %>
+ <tr>
+ <% end %>
+<tr>
+<td><%= lineitem2.store.product %></td>
+<td class="item_price"><%= number_to_currency(lineitem2.total_price) %></td>
+</tr>

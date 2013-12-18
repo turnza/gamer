@@ -1,0 +1,34 @@
+<%= image_tag("members.png",:alt => "im sad", :size=> "400x100")%>
+<div id="search">
+	<%= render :partial => 'members/search' %>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+	<th>Address</th>
+    <th>Email</th>
+    <th>Gamertag</th>
+    <th>Team</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.name %></td>
+	<td><%= member.address %></td>
+    <td><%= member.email %></td>
+    <td><%= member.gamertag %></td>
+    <td><%= member.team.name %></td>
+    <td><%= link_to 'Show', member %></td>
+    <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    <td><%= link_to 'Destroy', member, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Member', new_member_path %>

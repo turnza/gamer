@@ -1,0 +1,39 @@
+<%= image_tag("matches.png",:alt => "im sad", :size=> "400x100")%>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Time</th>
+    <th>Team</th>
+    <th>Member</th>
+	<th>VS</th>
+    <th>Competitor</th>
+    <th>Competitor</th>
+    <th>Game</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @match1s.each do |match1| %>
+  <tr>
+    <td><%= match1.name %></td>
+    <td><%= match1.time %></td>
+    <td><%= match1.team.name %></td>
+    <td><%= match1.member.gamertag %></td>
+	<td></td>
+    <td><%= match1.competitor.team %></td>
+    <td><%= match1.competitor.gamertag %></td>
+    <td><%= match1.game %></td>
+    <td><%= link_to 'Show', match1 %></td>
+    <td><%= link_to 'Edit', edit_match1_path(match1) %></td>
+    <td><%= link_to 'Destroy', match1, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<p> REMEBER TO REPORT YOUR TEAM SCORE </p>
+<%= link_to 'REPORT', new_result1_path %>
+
+<%= link_to 'New Match1', new_match1_path %>

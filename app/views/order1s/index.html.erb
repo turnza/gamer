@@ -1,0 +1,27 @@
+<h1>ORDERS</h1>
+
+<table>
+  <tr>
+    <th>Member</th>
+    <th>Paymethod</th>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @order1s.each do |order1| %>
+  <tr>
+    <td><%= order1.member_id %></td>
+    <td><%= order1.paymethod %></td>
+    <td><%= order1.total %></td>
+    <td><%= link_to 'Show', order1 %></td>
+    <td><%= link_to 'Edit', edit_order1_path(order1) %></td>
+    <td><%= link_to 'Destroy', order1, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order1', new_order1_path %>

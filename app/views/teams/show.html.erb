@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @team.name %>
+</p>
+
+<p>
+  <b>Arena:</b>
+  <%= @team.arena %>
+</p>
+
+<p>
+  <b>Logo:</b>
+  <%= @team.logo %>
+</p>
+<p>
+	<h4><b>Members for each team: </b></h4> <br \>
+	<% @team.members.each do |m| %>
+		<%= m.gamertag %>
+		<br \>
+	<% end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
+

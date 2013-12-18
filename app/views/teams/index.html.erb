@@ -1,0 +1,31 @@
+<%= image_tag("teams.png",:alt => "im sad", :size=> "400x100")%>
+<div id="search">
+	<%= render :partial => 'teams/search' %>
+</div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Arena</th>
+    <th>Logo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @teams.each do |team| %>
+  <tr>
+    <td><%= team.name %></td>
+    <td><%= team.arena %></td>
+    <td><%= image_tag(team.logo, :size => "100x100") %></td>
+    <td><%= link_to 'Show', team %></td>
+    <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    <td><%= link_to 'Destroy', team, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<P> MAKE SURE TO REGISTER YOUR TEAM ON THE TABLE IN ORDER TO BE ABLE TO PLAY GAMES</P>
+<%= link_to 'table', new_table1_path %>
+<p></p>
+<%= link_to 'New Team', new_team_path %>
